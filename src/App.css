@@ -1,0 +1,917 @@
+/* Changed font to Playfair Display for a luxury look */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #fff;
+  /* background-color: #f7f6f0 !important; */
+  /* background-color: #ffffe4 !important; */
+  font-family: "Playfair Display", serif;
+  /* color: aliceblue !important; */
+  /* font-family: "Centra", sans-serif !important; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+
+  p,
+  a,
+  li,
+  button,
+  ul {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
+
+  @media (min-width: 1700px) {
+    main .container {
+      max-width: 100%;
+      padding: 0 150px;
+    }
+  }
+
+  p.success {
+    color: green;
+  }
+
+  p.danger {
+    color: red;
+  }
+}
+/*............navbar...........*/
+
+.social-icon-col,
+.contact-info-col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  /* background-color: #1a1a1a; */
+  width: 100%;
+  /* Ensures that the flexbox occupies full height */
+}
+.social-icon-col {
+  flex: 1; /* Allow this column to grow */
+}
+
+.contact-info-col {
+  flex: 1; /* Allow this column to grow */
+
+  justify-content: center; /* Align content to the right */
+}
+
+.contact-info h6 {
+  margin: 0; /* Remove any default margin */
+}
+
+.contact-info a {
+  display: inline-block;
+  margin: 0 5px; /* Add some margin between links */
+}
+
+.contact-info a.phone-link {
+  color: #d97706;
+  text-decoration: none; /* Remove underline */
+}
+
+.navbar-container {
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+.top-section {
+  background-color: #f7f6f0;
+  padding: 10px 0;
+  /* height: 100px; */
+  text-align: center;
+  align-items: center;
+}
+
+.center-logo {
+  width: 100px;
+}
+
+.bottom-section {
+  width: 100%;
+  background-color: #1a1a1a;
+  font-family: "Playfair Display", serif;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-info-col .contact-info .black-icon {
+  color: black; /* Ensure this is not overridden */
+}
+
+nav.navbar .navbar-nav {
+  flex-direction: row;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  color: whitesmoke !important;
+  letter-spacing: 0.8px;
+  padding: 0 20px; /* Increased padding for more spacing */
+  font-size: 19px;
+  opacity: 0.7; /* Adjusted opacity for better visibility */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  nav.navbar .navbar-nav {
+    flex-direction: column;
+    background-color: #1a1a1a;
+    width: 100%; /* Ensure it takes full width */
+    padding: 10px 0; /* Add padding for spacing */
+  }
+  .bottom-section {
+    height: auto; /* Let content define the height */
+    padding: 10px; /* Add padding for comfortable spacing */
+    display: block; /* Ensure elements stack correctly */
+  }
+  .top-section {
+    height: 67px;
+    padding: 10px 0;
+  }
+  /* Hide social icons and contact info on smaller screens */
+  .social-icon-col,
+  .contact-info-col {
+    display: none;
+  }
+
+  /* Reduce logo size for smaller screens */
+  .center-logo {
+    width: 60px; /* Adjusted logo size */
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-size: 18px; /* Slightly smaller font size */
+    padding: 10px 0; /* Adjust padding for tap target */
+    color: whitesmoke !important;
+    opacity: 0.9; /* Make links more visible */
+    text-align: center; /* Center text for better alignment */
+  }
+  /* Add a border between nav items for clarity */
+  nav.navbar .navbar-nav .nav-link.navbar-link:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .navbar-toggler-icon {
+    background-color: #f7f6f074;
+    border-radius: 2px;
+  }
+}
+
+/*........BANNER............*/
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  height: 100vh; /* Default height for larger screens */
+  font-family: "Playfair Display", serif;
+  padding: 300px 0;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center; /* Center-align text */
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/img/banner-i.png"); /* Ensure you use the correct path */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.banner h1 {
+  font-size: 60px;
+  font-weight: 700;
+  text-align: left;
+  animation: fadeIn 2s;
+  color: #f7f6f0;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.banner p {
+  color: #f7f6f0;
+  text-align: left;
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  font-weight: 100;
+  width: 96%;
+  animation: fadeIn 2s;
+  margin-top: 10px;
+}
+
+.banner button {
+  animation: fadeIn 2s;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: rgb(245, 245, 245);
+  border: 1px solid rgb(245, 245, 245);
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.384);
+}
+
+.banner button:hover {
+  background-color: whitesmoke;
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .banner {
+    height: auto; /* Height for smaller screens */
+    padding: 250px 0;
+  }
+
+  .banner h1 {
+    font-size: 36px; /* Smaller font size for h1 */
+  }
+
+  .banner p {
+    font-size: 18px; /* Smaller font size for paragraph */
+  }
+
+  .banner button {
+    font-size: 16px; /* Smaller font size for button */
+    margin-top: 30px;
+  }
+
+  .banner button svg {
+    font-size: 20px; /* Smaller icon size */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*........About........*/
+.about-section {
+  font-family: "Playfair Display", serif;
+  background-color: #1a1a1a; /* Set background to black */
+  color: white;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box;
+}
+
+.about-section .content-container {
+  position: relative;
+  padding: 20px;
+  flex: 2;
+}
+
+.about-section .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.about-section img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* Limit the image width */
+  border-radius: 10px;
+}
+
+.about-section h1,
+.about-section h2,
+.about-section p {
+  margin: 0 0 20px 0;
+}
+
+.about-section h1 {
+  font-size: 1.25rem;
+  color: #d97706;
+  text-decoration-line: underline;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about-section .highlight {
+  display: inline-block;
+  padding-left: 15px;
+  border-left: 2px solid #df8133;
+  margin-bottom: 20px;
+}
+
+.about-section button {
+  background-color: #d97706; /* Orange background */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section button:hover {
+  background-color: #d97706; /* Darker orange on hover */
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    flex-direction: column;
+    padding: 20px; /* Adjust padding for smaller screens */
+    height: auto;
+    min-height: auto;
+  }
+
+  .about-section .row {
+    flex-direction: column;
+  }
+
+  .about-section h1,
+  .about-section h2,
+  .about-section p {
+    margin: 0 0 20px 0;
+    text-align: left;
+  }
+
+  .about-section h1 {
+    font-size: 1rem;
+    color: #df8133;
+    text-decoration-line: underline;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .about-section p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .about-section .content-container,
+  .about-section .image-container {
+    animation: none;
+  }
+
+  .about-section .content-container {
+    padding: 20px 0;
+  }
+
+  .about-section img {
+    margin: 20px 0;
+    max-width: 100%; /* Ensure the image fits within the container on smaller screens */
+  }
+}
+
+/*........INFO...................*/
+.info-section {
+  font-family: "Playfair Display", serif;
+  background-color: #1a1a1a; /* Set background to black */
+  color: white;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 60px px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 2rem;
+  color: #d97706;
+  text-decoration: underline;
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  /* margin-bottom: 40px; */
+}
+
+.info-image {
+  width: 100%;
+  height: auto;
+  max-width: 60%;
+  border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+  .info-section {
+    padding: 20px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .main-heading {
+    font-size: 2rem;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+  }
+
+  .info-image {
+    max-width: 100%;
+  }
+}
+
+/*.............Services............*/
+.services {
+  align-items: center;
+  /* height: 100vh; */
+  justify-content: center;
+  height: auto;
+  font-family: "Playfair Display", serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 100px 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.services-title {
+  animation: fadeIn 2s;
+  color: #d97706;
+  font-size: 1.25rem;
+  text-decoration-line: underline;
+}
+
+.services-subtitle {
+  font-size: 2.5rem;
+}
+
+.services-container {
+  padding-top: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  margin: 5px;
+}
+
+.service-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-image img {
+  max-width: 80px;
+  height: auto;
+}
+
+.service-details {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.service-title:hover {
+  color: #f8961e;
+}
+
+.service-description {
+  font-size: 0.75rem;
+
+  color: #bbb;
+  text-align: left;
+  padding-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 1rem;
+  }
+
+  .services-subtitle {
+    font-size: 2rem;
+  }
+  .services-container {
+    /* flex-direction: column;
+    align-items: center; */
+  }
+
+  .service-card {
+    max-width: 100%;
+    /* margin: 10px 0; */
+  }
+
+  .service-title {
+    font-size: 1rem;
+  }
+
+  .service-description {
+    font-size: 0.75rem;
+  }
+}
+
+/*..........PROJECTS.........*/
+/* Add to your existing CSS */
+/* Add to your existing CSS */
+
+.lightbox-modal .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.lightbox-body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Ensures the image covers the available space */
+  transition: transform 0.3s ease; /* Smooth scale transition */
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10; /* Ensure the button is on top of the image */
+}
+
+@media (max-width: 768px) {
+  .lightbox-image {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  font-family: "Playfair Display", serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 100px 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.recent-projects-title {
+  margin-bottom: 50px;
+  font-size: 2rem;
+  color: #d97706;
+  text-decoration-line: underline;
+}
+
+.projects-carousel .carousel-item {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.project-carousel-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  /* animation: fadeIn 1s; */
+}
+
+@media (max-width: 768px) {
+  .project-carousel-img {
+    max-width: 100%;
+    height: 50vh; /* Set maximum height to half the size of the viewport height */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+/*..........CONTACT.........*/
+
+.contact {
+  background-color: #1a1a1a;
+  font-family: "Playfair Display", serif;
+  padding: 60px 0 0 0;
+}
+.contact-bx {
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+  border-radius: 8px;
+  text-align: center;
+  /* transition: 0.3s ease-in-out; */
+  padding: 60px 50px;
+  margin-top: -60px;
+}
+.contact img {
+  width: 60%;
+  height: 60%;
+}
+.contact-title {
+  color: #d97706;
+  text-decoration-line: underline;
+  font-size: 1.25rem;
+}
+
+.contact-subtitle {
+  color: white;
+  font-size: 2.5rem;
+  padding-bottom: 30px;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #fff;
+  margin: 0 0 8px 0;
+  padding: 18px 26px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  /* transition: 0.3s ease-in-out; */
+}
+.contact form input:focus,
+.contact form textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+.contact form button {
+  font-weight: 700;
+  /* width: 100%; */
+
+  background-color: #df8133;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin-top: 25px;
+  border-radius: 0;
+  position: relative;
+  /* transition: 0.3s ease-in-out; */
+}
+.contact form button span {
+  z-index: 1;
+  position: relative;
+}
+.contact form button:hover {
+  color: #000;
+}
+.contact form button::before {
+  content: "";
+  background: white;
+  width: 0;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  /* transition: 0.3s ease-in-out; */
+}
+.contact form button:hover::before {
+  width: 100%;
+}
+/*.........FOOTER.........*/
+.footer {
+  padding: 50px 0;
+  font-family: "Playfair Display", serif;
+  background-color: #fff;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%; /* Ensure full width */
+}
+/* .footer img {
+  width: 40%;
+  display: flex;
+  align-items: right;
+
+  justify-content: center;
+} */
+.footer img {
+  width: 40%;
+  display: block; /* Centering block-level elements */
+  margin: 0 auto; /* Auto margins for centering */
+}
+.footer p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #b8b8b8;
+  letter-spacing: 0.5px;
+  display: flex;
+
+  justify-content: start;
+}
+.footer h6 {
+  border-left: 2px solid #df8133;
+  padding-left: 18px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.8px;
+  display: flex;
+  justify-content: start;
+}
+.footer h2 {
+  padding-left: 18px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.8px;
+  display: flex;
+  justify-content: start;
+}
+.footer h5 {
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.8px;
+  display: flex;
+
+  justify-content: start;
+}
+.footer a.phone-link {
+  color: #df8133; /* Change to your desired color */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-iconn {
+  width: 40px;
+  justify-content: left; /* Ensure icons are centered */
+  /* flex-wrap: wrap;  */
+  /* display: flex; */
+}
+
+.social-icon img {
+  background-color: #383b3f;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.social-icon img:hover {
+  background-color: #f8961e;
+}
+
+@media (max-width: 768px) {
+  .social-iconn {
+    justify-content: left; /* Center the icons */
+  }
+
+  .social-icon img {
+    display: flex;
+    width: 35px; /* Adjust icon size for mobile if needed */
+    height: 35px; /* Adjust icon size for mobile if needed */
+  }
+  .footer img {
+    width: 40%; /* Adjust as needed */
+  }
+  .footer h6 {
+    border-left: 2px solid #df8133;
+    padding-left: 18px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 0.8px;
+    display: flex;
+    justify-content: start;
+  }
+  .footer p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #b8b8b8;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: start;
+    text-align: start;
+  }
+}
